@@ -200,7 +200,7 @@ class DOTADataset(CustomDataset):
                 dataset=self.CLASSES,
                 version=self.version,
                 logger=logger)
-            eval_results['mAP'] = mean_ap
+            eval_results[f'bbox_mAP_{int(iou_thr*100)}'] = mean_ap
         else:
             raise NotImplementedError
 
